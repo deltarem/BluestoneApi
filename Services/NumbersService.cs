@@ -21,6 +21,7 @@ namespace BluestoneApi.Services
             if (numbers.Trim().Length > 0)
             {
                 numbers = numbers.Replace(" ", "");
+
                 if (!rgx.IsMatch(numbers))
                 {
                     throw new Exception(badRequestExceptionMessage);
