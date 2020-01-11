@@ -24,7 +24,9 @@ namespace BluestoneApi
             services.AddTransient<INumbersService, NumbersService>();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Bluestone API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Bluestone API", Version = "v1",
+                    Description = "Enter the number list to numbers field with comma separation, use isSort and isFilter fields to sort and filter number list."
+                });
             });
         }
 
