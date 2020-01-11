@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using BluestoneApi.Models;
 using BluestoneApi.Services;
@@ -51,9 +52,20 @@ namespace BluestoneApi.Controllers
 
 
         [HttpGet]
-        public IEnumerable<int> Get()
+        public ContentResult Get()
         {
-            return new List<int> { 1, 2, 3 };
+
+            return new ContentResult
+            {
+                ContentType = "text/html",
+                StatusCode = (int)HttpStatusCode.OK,
+                Content = "<html><style>html {margin-top:100px; text-align: center;}</style><body>" +
+                "<h2>Please use the following link to test Bluestone API <h2>" +
+                "<a href = https://" + Request.Host.Value + "/swagger/index.html> Bluestone API </a>" +
+                "</body></html>"
+            };
         }
     }
 }
+
+

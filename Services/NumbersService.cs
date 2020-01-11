@@ -21,6 +21,7 @@ namespace BluestoneApi.Services
 
             if (numbers.Trim().Length > 0)
             {
+                numbers = numbers.Replace(" ", "");
                 if (!rgx.IsMatch(numbers))
                 {
                     throw new Exception(badRequestExceptionMessage);
@@ -52,6 +53,7 @@ namespace BluestoneApi.Services
             return filteredNumbers;
         }
 
+
         private bool isPrime(int n)
         {
             if (n < 2) return false;
@@ -65,5 +67,7 @@ namespace BluestoneApi.Services
 
             return true;
         }
+
+
     }
 }
